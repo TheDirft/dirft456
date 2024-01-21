@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dirft</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Use the full viewport height */
+            margin: 0;
+            background-color: black; /* Set the background color to black */
+            color: white;
+            
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            align-self: center; /* Center horizontally */
+            background-color: rgba(255, 0, 0, 0.26);
+            border: none; /* Remove default button border */
+            border-radius: 5px; /* Add rounded corners */
+            outline: none; /* Remove button outline */
+            cursor: pointer; /* Change cursor on hover */
+        }
+
+        #content {
+            display: none; /* Hide the content initially */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="openNewScreen()">Click me</button>
+
+    <div id="content">
+        <h1>I am dirft</h1>
+        
+    </div>
+
+    <script>
+        function openNewScreen() {
+            var newWindow = window.open('', '_blank');
+            var contentText = document.querySelector('#content h1').innerText;
+            newWindow.document.write('<h1>' + contentText + '</h1>');
+            newWindow.document.close(); // Close the document for writing
+        }
+    </script>
+
+</body>
+</html>
